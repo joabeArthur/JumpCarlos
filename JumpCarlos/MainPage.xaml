@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JumpCarlos.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="ClicaNaTela"/>
+        </Grid.GestureRecognizers>
+
+        <Image Source="fundodeserto.png"
+               Aspect="AspectFill"
+               x:Name="Fundo"
+               VerticalOptions="Fill"
+               HorizontalOptions="Fill"/>
+
+        <Image Source="cachorro.png"
+               x:Name="ImgPassaro"
+               Margin="10"
+               HorizontalOptions="Center"
+               BackgroundColor="Green"
+               HeightRequest="150"
+               WidthRequest="150"/>
+
+        <Image Source="osso.png"
+               x:Name="ImgCanoCima"
+               Aspect="AspectFill"
+               HorizontalOptions="End"
+               HeightRequest="400"
+               WidthRequest="150"
+               BackgroundColor="Blue"
+               VerticalOptions="Start"/>
+
+        <Image Source="osso.png"
+               HorizontalOptions="End"
+               x:Name="ImgCanoBaixo"
+               Aspect="AspectFill"
+               HeightRequest="400"
+               WidthRequest="150"
+               BackgroundColor="Blue"
+               VerticalOptions="End"/>
+
+
+        <Image Source="chao.png"
+               x:Name="imgChao"
+               Aspect="AspectFill"
+               VerticalOptions="End"
+               HeightRequest="70"
+               Margin="0, 600, 0, 0"/>
+
+
+
+        <Frame x:Name="GameOverFrame"
+               BackgroundColor="#99000000"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill">
+
+            <Frame.GestureRecognizers>
+
+                <TapGestureRecognizer Tapped="Cabo"/>
+
+            </Frame.GestureRecognizers>
+
+            <Label x:Name="AcabouScore"
+                   FontSize="60"
+                   TextColor="Black"
+                   BackgroundColor="Gray"
+                   FontFamily="RocksDeath"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Frame>
+    </Grid>
+
+</ContentPage>
