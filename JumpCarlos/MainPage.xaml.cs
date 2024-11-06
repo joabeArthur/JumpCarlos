@@ -17,9 +17,18 @@ public partial class MainPage : ContentPage
 	const int AberturaMinima = 20;
 	int Pontuacao = 0;
 
+	bool musica = true;
+
 	public MainPage()
 	{
 		InitializeComponent();
+
+		musica = true;
+
+		if (musica == true)
+		{
+			SoundHelper.Play("deixacontecer.wav"); 
+		}
 	}
 
 	void ColocarGravidade()
@@ -44,8 +53,8 @@ public partial class MainPage : ContentPage
 			if (VericaColisao())
 			{
 				Morte = true;
-				SoundHelper.Play("arrastapracima.wav");
 				GameOverFrame.IsVisible = true;
+				
 				break;
 			}
 			await Task.Delay(TempoEntreFremes);
@@ -73,7 +82,6 @@ public partial class MainPage : ContentPage
 
 	void Inicializar()
 	{
-		SoundHelper.Play("deixacontecer.wav");
 		ImgPassaro.TranslationY = 0;
 		Morte = false;
 		ImgCanoCima.TranslationX = -LarguraJanela;
@@ -135,10 +143,10 @@ public partial class MainPage : ContentPage
 	{
 		var posHorizontalPassaro = (LarguraJanela / 2) - (ImgPassaro.WidthRequest / 2);
 		var posVerticalPassaro = (AlturaJanela / 2) - (ImgPassaro.HeightRequest / 2) + ImgPassaro.TranslationY;
-		var yMaxCano = ImgCanoCima.HeightRequest + ImgCanoCima.TranslationY + AberturaMinima;
+
 		if (posHorizontalPassaro >= Math.Abs(ImgCanoCima.TranslationX) - ImgCanoCima.WidthRequest &&
-			posHorizontalPassaro <= Math.Abs(ImgCanoCima.TranslationX) + ImgCanoCima.WidthRequest &&
-			posVerticalPassaro <= ImgCanoCima.HeightRequest + ImgPassaro.TranslationY)
+		posHorizontalPassaro <= Math.Abs(ImgCanoCima.TranslationX) + ImgCanoCima.WidthRequest &&
+		posVerticalPassaro <= ImgCanoCima.HeightRequest + ImgCanoCima.TranslationY)
 		{
 			return true;
 		}
@@ -147,6 +155,8 @@ public partial class MainPage : ContentPage
 			return false;
 		}
 	}
+
+	
 
 	bool VerificarColisaoCanoBaixo()
 	{
@@ -164,6 +174,8 @@ public partial class MainPage : ContentPage
 			return false;
 		}
 	}
+
+	
 	bool VerificarColisaoCima()
 	{
 		var minY = -AlturaJanela / 2;

@@ -20,7 +20,6 @@
                x:Name="ImgPassaro"
                Margin="10"
                HorizontalOptions="Center"
-               BackgroundColor="Green"
                HeightRequest="150"
                WidthRequest="150"/>
 
@@ -30,7 +29,6 @@
                HorizontalOptions="End"
                HeightRequest="400"
                WidthRequest="150"
-               BackgroundColor="Blue"
                VerticalOptions="Start"/>
 
         <Image Source="osso.png"
@@ -39,7 +37,6 @@
                Aspect="AspectFill"
                HeightRequest="400"
                WidthRequest="150"
-               BackgroundColor="Blue"
                VerticalOptions="End"/>
 
 
